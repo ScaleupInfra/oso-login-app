@@ -1,9 +1,10 @@
 const { Oso } = require("oso-cloud");
 const express = require("express");
+require("dotenv").config(); 
 const app = express();
 app.use(express.json()); // Add this to parse JSON bodies
 
-const apiKey = "<your-api-key>";
+const apiKey = process.env.OSO_TOKEN || "<your-api-key>";
 const oso = new Oso("https://cloud.osohq.com", apiKey);
 
 // `app` is the Express instance
