@@ -71,6 +71,30 @@ function App() {
               <span className="blog-meta">By Chef Alex · 1 day ago</span>
             </div>
           </article>
+          <article className="blog-card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Nature" className="blog-img" />
+            <div className="blog-content">
+              <h2>Discovering the Beauty of Nature</h2>
+              <p>Explore the wonders of the natural world and find peace in the outdoors. From mountain hikes to tranquil lakes, nature has something for everyone.</p>
+              <span className="blog-meta">By Jane Doe · 2 hours ago</span>
+            </div>
+          </article>
+          <article className="blog-card">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Tech" className="blog-img" />
+            <div className="blog-content">
+              <h2>The Future of Technology</h2>
+              <p>Stay ahead with the latest trends in technology, from AI breakthroughs to the newest gadgets that are changing the way we live and work.</p>
+              <span className="blog-meta">By John Smith · 5 hours ago</span>
+            </div>
+          </article>
+          <article className="blog-card">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Food" className="blog-img" />
+            <div className="blog-content">
+              <h2>Delicious Recipes for Every Day</h2>
+              <p>Find inspiration for your next meal with these easy and delicious recipes, perfect for busy weeknights or special occasions.</p>
+              <span className="blog-meta">By Chef Alex · 1 day ago</span>
+            </div>
+          </article>
         </main>
       </div>
     );
