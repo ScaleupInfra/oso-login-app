@@ -4,7 +4,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json()); // Add this to parse JSON bodies
 
-const apiKey = process.env.OSO_TOKEN || "<your-api-key>";
+const apiKey = "e_OLgVsSYNCbYcgEtMOWRME_6B4fbUTSneM_tvRSg4M9nvPOWW5fakkuf3aLTtR";
 const oso = new Oso("https://cloud.osohq.com", apiKey);
 
 // `app` is the Express instance
