@@ -35,3 +35,45 @@ This project demonstrates a modern full-stack web application using:
 
 ---
 Built with ❤️ using Oso, Express, and React.
+
+
+## OSO Rules
+
+actor User {}
+
+resource Organization {
+  roles = ["viewer", "owner", "admin"];
+}
+
+resource Project {
+  roles = ["viewer", "contributor", "owner", "admin"];
+  permissions = ["view", "edit", "delete", "create"];
+
+  relations = {
+    project_container: Organization
+  };
+
+  "view" if "viewer";
+  "edit" if "contributor";
+  "create" if "contributor";
+  "delete" if "owner";
+
+  "viewer" if "contributor";
+  "contributor" if "admin";
+  "contributor" if "owner";
+  "viewer" if "admin";
+  "viewer" if "owner";
+
+  "viewer" if "viewer" on "project_container";
+  "contributor" if "admin" on "project_container";
+  "owner" if "owner" on "project_container";
+  "admin" if "admin" on "project_container";
+}
+
+resource Blog {
+  permissions = ["view", "edit", "delete"];
+
+  "view" if has_permission(actor, "view", resource);
+  "edit" if has_permission(actor, "edit", resource);
+  "delete" if has_permission(actor, "delete", resource);
+}
